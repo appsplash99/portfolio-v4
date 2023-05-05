@@ -50,7 +50,10 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
 3. Install dependencies
 
    ```sh
-   yarn
+   rm -rf node_modules
+   rm package-lock.json yarn.lock
+   npm cache clear --force
+   npm install --force
    ```
 
 4. Start the development server

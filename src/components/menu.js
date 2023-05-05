@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { navLinks } from '@config';
+import { navLinks, resumeLink } from '@config';
 import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
 
@@ -266,9 +266,12 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/resume.pdf" className="resume-link">
+            <button
+              className="resume-link"
+              onClick={() => window.open(resumeLink, '_blank')}
+              style={{ cursor: 'pointer', userSelect: 'none' }}>
               Resume
-            </a>
+            </button>
           </nav>
         </StyledSidebar>
       </div>

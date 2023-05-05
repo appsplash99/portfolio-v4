@@ -8,6 +8,7 @@ import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
 import { IconLogo, IconHex } from '@components/icons';
+import { resumeLink } from '../config';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -206,9 +207,12 @@ const Nav = ({ isHome }) => {
   );
 
   const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+    <button
+      className="resume-button"
+      onClick={() => window.open(resumeLink, '_blank')}
+      style={{ cursor: 'pointer', userSelect: 'none' }}>
       Resume
-    </a>
+    </button>
   );
 
   return (

@@ -142,6 +142,7 @@ const StyledPost = styled.li`
   }
 `;
 
+// TODO: convert this page into code snippets
 const PensievePage = ({ location, data }) => {
   const posts = data.allMarkdownRemark.edges;
 
@@ -211,7 +212,10 @@ export default PensievePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { draft: { ne: true } } }
+      filter: {
+        fileAbsolutePath: { regex: "/content/posts/" }
+        frontmatter: { draft: { ne: true } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

@@ -286,6 +286,7 @@ const Jobs = () => {
                     hidden={activeTabId !== i}>
                     <h3>
                       <span>{title}</span>
+                      {/* TODO: change the layout container - as Shardeum ame is breaking up  */}
                       <span className="company">
                         &nbsp;@&nbsp;
                         <a href={url} className="inline-link">
